@@ -1,0 +1,16 @@
+<%- include('partials/head') %>
+
+  <body>
+    <%- include('partials/header') %>
+      <ul class="cocktail-list">
+        <% cocktailDetail.drinks.forEach(cocktailDetail => { %>
+          <li>
+            <a href="<%= cocktailDetail.idDrink %>">
+              <%= cocktailDetail.strDrink %>
+                <img src="<%= cocktailDetail.strDrinkThumb %>">
+            </a>
+          </li>
+          <% }) %>
+      </ul>
+
+  </body>
