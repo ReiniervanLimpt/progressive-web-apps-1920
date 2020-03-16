@@ -1,3 +1,5 @@
+@import "reset.css";
+
 ul{
   display: flex;
   flex-wrap: wrap;
@@ -13,8 +15,22 @@ li{
   width: 32%;
 }
 li img{
-  width: 30%;
+  width: 100%;
 }
 li a{
 
+}
+
+ul{
+  text-align: center;
+}
+
+li{
+  list-style: none;
+  width: 20%;
+  text-align:center;
+  color: white;
+  margin: 0.5%;
+  background: lightslategray;
+  border-radius: 5px;
 }

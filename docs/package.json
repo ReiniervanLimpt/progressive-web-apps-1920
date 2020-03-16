@@ -4,7 +4,10 @@
   "description": "progressive-web-apps-1920",
   "main": "index.js",
   "scripts": {
+    "prestart": "npm run build:css",
     "start": "nodemon server.js",
+    "build:css": "node scripts/build-css.js",
+    "watch:css": "chokidar 'static/css/*.css' --command 'npm run build:css'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Reinier van Limpt",
@@ -15,6 +18,12 @@
     "node-fetch": "^2.6.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.2"
+    "chokidar-cli": "^2.1.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "nodemon": "^2.0.2",
+    "rimraf": "^3.0.2"
   }
 }
