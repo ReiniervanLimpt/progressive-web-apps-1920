@@ -36,20 +36,40 @@ Doel: Optimize the Critical Rendering Path
 [Slides](...)
 
 
-<!-- Add a link to your live demo in Github Pages 🌐-->
+My Cocktails PWA:
 
-<!-- ☝️ replace this description with a description of your own work -->
+## To do list
 
-<!-- Add a nice image here at the end of the week, showing off your shiny frontend 📸 -->
+- [x] make data render serverside
+- [x] implement tooling
+- [x] impletement manifest.json file
+- [ ] implement service-worker
+- [ ] deploy website to heroku
+- [ ] make it fancy with css!
+- [ ] implement error handling like 404
 
-<!-- Maybe a table of contents here? 📚 -->
+## wishlist
 
-<!-- How about a section that describes how to install this project? 🤓 -->
+- [ ] allow users to make a profile and save favorite cocktails
 
-<!-- ...but how does one use this project? What are its features 🤔 -->
+## install my webapp
 
-<!-- What external data source is featured in your project and what are its properties 🌠 -->
+# make suer you have nodeJS installed
 
-<!-- Maybe a checklist of done stuff and stuff still on your wishlist? ✅ -->
+Navigate to the folder where you wish to clone the app to using your terminal
 
-<!-- How about a license here? 📜 (or is it a licence?) 🤷 -->
+`cd path/path/path`
+
+Clone this repository to the folder
+
+`git clone https://github.com/ReiniervanLimpt/progressive-web-apps-1920.git`
+
+Run the install, this installs all the required packages included in the package.json file
+
+`npm install`
+
+After the install run the npm start script
+
+`npm start`
+
+listens to localhost:3000
