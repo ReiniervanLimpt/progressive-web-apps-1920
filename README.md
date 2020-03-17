@@ -16,7 +16,7 @@
 
 ## install my webapp
 
-# make sure you have nodeJS installed
+### make sure you have nodeJS installed
 
 Navigate to the folder where you wish to clone the app to using your terminal
 
