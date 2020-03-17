@@ -4,10 +4,12 @@
   "description": "progressive-web-apps-1920",
   "main": "index.js",
   "scripts": {
-    "prestart": "npm run build:css",
+    "prestart": "npm run build:css && npm run build:assets",
     "start": "nodemon server.js",
+    "prebuild:css": "rimraf ./static",
     "build:css": "node scripts/build-css.js",
-    "watch:css": "chokidar 'static/css/*.css' --command 'npm run build:css'",
+    "build:assets": "node scripts/build-static-assets.js",
+    "watch:css": "chokidar 'src/css/styles.css' --command 'npm run build:css'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Reinier van Limpt",
@@ -23,6 +25,7 @@
     "gulp-autoprefixer": "^7.0.1",
     "gulp-clean-css": "^4.3.0",
     "gulp-concat": "^2.6.1",
+    "ncp": "^2.0.0",
     "nodemon": "^2.0.2",
     "rimraf": "^3.0.2"
   }
