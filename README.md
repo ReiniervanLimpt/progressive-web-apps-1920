@@ -42,14 +42,14 @@ My Cocktails PWA:
 
 - [x] make data render serverside
 - [x] implement tooling
-- [x] impletement manifest.json file
+- [x] implement manifest.json file
 - [ ] implement service-worker
-- [ ] deploy website to heroku
 - [ ] make it fancy with css!
-- [ ] implement error handling like 404
+- [ ] deploy website to heroku
 
 ## wishlist
 
+- [ ] implement error handling
 - [ ] allow users to make a profile and save favorite cocktails
 
 ## install my webapp
