@@ -145,3 +145,29 @@ article.cocktail-detail ul li{
 article.cocktail-detail img{
   width: 80%;
 }
+
+@media (max-width: 40em){
+
+  input[type="text"] {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  input[type="submit"] {
+    width: 100%;
+  }
+
+.instructions{
+  font-size: 1em;
+}
+
+ul.cocktail-list li {
+    width: 31%;
+    font-size: 0.6em;
+}
+
+article.cocktail-detail {
+    width: 80%;
+    margin-left: 5%;
+}
+}
