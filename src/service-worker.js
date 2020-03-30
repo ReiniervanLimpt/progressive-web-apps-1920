@@ -1,6 +1,7 @@
 const CORE_CACHE_VERSION = '1';
 const CORE_ASSETS = [
-  '/styles.css'
+  '/offline',
+  '/styles.css',
 ];
 
 self.addEventListener('install', event => {

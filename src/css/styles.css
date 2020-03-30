@@ -1,29 +1,147 @@
 @import "reset.css";
 
+body{
+  font-family: 'Roboto Mono', monospace;
+  background-image: url("cocktailsbg2.png");
+  background-color: white;
+  background-size: 100vw;
+}
+
+.instructions{
+  font-size: 2em;
+  text-align: center;
+  margin-left: 25%;
+  margin-top: 10%;
+  width: 50%;
+  color: white;
+  background: rgba(66,142,204,.7);
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.instructions h1{
+  font-size: 2em;
+  color: #765fa6;
+}
+
+header {
+  background: #428ecc;
+  color: white;
+  font-size: 2em;
+  padding: 20px;
+}
+
+input[type="text"] {
+  border-radius: 10px;
+  border: none;
+}
+
+input[type="submit"] {
+  margin-left: 15px;
+  background: #765fa6;
+  color: white;
+  border: none;
+  border-radius: 10px;
+}
+
 ul{
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 form{
   text-align: center;
+  margin: 0;
+  display: flex;
+  justify-content: center;
 }
 
-li{
+li img{
+  width: 100%;
+  border-radius: 10px;
+}
+
+ul.cocktail-list{
+  margin-top: 10px;
+}
+
+ul.cocktail-list li{
   list-style: none;
-  width: 24%;
-  text-align:center;
+  width: 15%;
   color: white;
   margin: 0.5%;
   background: lightslategray;
+  border-radius: 10px;
+  position: relative;
+  border: 2px solid black;
+}
+
+ul.cocktail-list p{
+  font-size: 1.5em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 5px;
+  background: white;
+  color: #765fa6;
+  padding: 5px;
   border-radius: 5px;
 }
-li img{
+
+article.cocktail-detail{
+  display: block;
+  width: 30%;
+  text-align: center;
+  margin-left: 35%;
+  margin-top: 20px;
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 100px;
+}
+
+article.cocktail-detail h1{
+  width: 100%;
+  font-size: 2em;
+  color: white;
+  padding-top: 10px;
+  padding-bottom: 15px;
+  background: rgba(118,95,166,.7);
+  border-radius: 10px 10px 0px 0px;
+}
+
+article.cocktail-detail h2 {
+  width: 100%;
+  font-size: 1.5em;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+article.cocktail-detail p{
+  width: 100%;
+  outline: 2px dashed #2196f3;
+  padding: 10px;
+}
+
+article.cocktail-detail p:first-of-type {
+  width: 100%;
+  font-size: 1.2em;
+  background: white;
+  padding-top: 10px;
+  padding-bottom: 15px;
+  color: #2196f3;
+  outline: none;
+}
+
+article.cocktail-detail ul{
   width: 100%;
 }
-li a{
 
+article.cocktail-detail ul li{
+  color: #765fa6;
+  font-size: 1.2em;
 }
 
-ul{
-  text-align: center;
+article.cocktail-detail img{
+  width: 80%;
 }

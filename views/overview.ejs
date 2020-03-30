@@ -4,8 +4,8 @@
     <% cocktailData.drinks.forEach(cocktailData => { %>
       <li>
         <a href="/cocktails/<%= cocktailData.idDrink %>">
-          <%= cocktailData.strDrink %>
             <img src="<%= cocktailData.strDrinkThumb %>">
+            <p><%= cocktailData.strDrink %></p>
         </a>
       </li>
       <% }) %>

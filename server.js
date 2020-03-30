@@ -10,6 +10,10 @@ app.set('views', 'views')
 
 app.use(express.static('static'))
 
+app.get('/offline', (req, res) => {
+  res.render('offline.ejs')
+})
+
 app.get('/overview', (req, res) => {
   const ingredient = req.query.ingredient
   const drink = req.query.drink
@@ -17,6 +21,7 @@ app.get('/overview', (req, res) => {
   fetch(`${url}${apiKey}/filter.php?i=${ingredient}`)
     .then(async response => {
       const cocktailData = await response.json()
+      console.log(cocktailData)
       res.render('overview.ejs', {
         cocktailData
       });
@@ -30,6 +35,7 @@ app.get('/cocktails/:id', (req, res) => {
   fetch(`${url}${apiKey}/lookup.php?i=${detail}`)
     .then(async response => {
       const cocktailDetail = await response.json()
+      console.log(cocktailDetail)
       res.render('detail.ejs', {
         cocktailDetail
       });
