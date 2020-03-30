@@ -8,6 +8,11 @@ const url = 'https://www.thecocktaildb.com/api/json/v1/'
 app.set('view engine', 'ejs')
 app.set('views', 'views')
 
+app.use(/.*-[0-9a-f]{10}\..*/, (req, res, next) => {
+  res.setHeader('Cache-Control', 'max-age=365000000, immutable');
+  next();
+});
+
 app.use(express.static('static'))
 
 app.get('/offline', (req, res) => {

@@ -118,7 +118,7 @@ article.cocktail-detail h2 {
 }
 
 article.cocktail-detail p{
-  width: 100%;
+  width: 93%;
   outline: 2px dashed #2196f3;
   padding: 10px;
 }
@@ -159,6 +159,7 @@ article.cocktail-detail img{
 
 .instructions{
   font-size: 1em;
+  margin-left: 20%;
 }
 
 ul.cocktail-list li {
