@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "prestart": "npm run build:css && npm run build:assets",
-    "start": "nodemon server.js",
+    "start": "node server.js",
     "prebuild:css": "rimraf ./static",
     "build:css": "node scripts/build-css.js",
     "build:assets": "node scripts/build-static-assets.js",
