@@ -15,6 +15,7 @@
 
 - [ ] implement error handling
 - [ ] allow users to make a profile and save favorite cocktails
+- [ ] critical css implemented as described in [this article from Smashing mag](https://www.smashingmagazine.com/2015/08/understanding-critical-css/)
 
 ## install my webapp
 
@@ -85,6 +86,8 @@ On a slow 3g connection the first painted pixel only appears 4 seconds after the
 
 ## showing first paint with critical CSS
 
-By injecting the main css needed for styling on my header and instructions section in the head section i can show those elements almost instantaneously *(note that i excluded the background image because that would take "forever" to load)*... The result:
+By injecting the main css needed for styling on my header and instructions section in the head section i would be able to show those elements much quicker, i excluded the background image because that would take "forever" to load. The result:
 
 ![critical CSS](https://user-images.githubusercontent.com/36195440/78159482-e9f48080-7442-11ea-9200-2b1ad9bc33af.png)
+
+not that much changed... i followed [this](https://jonassebastianohlsson.com/criticalpathcssgenerator/) tutorial for the easy way out but i quickly found out its not all that easy according to [this article from Smashing mag](https://www.smashingmagazine.com/2015/08/understanding-critical-css/) and [this one from Voorhoede](https://www.voorhoede.nl/en/blog/why-our-website-is-faster-than-yours/#critical-css)
