@@ -45,11 +45,46 @@ My webapp allows users to search for cocktails based on ingredient ie. lemon(sho
 
 ![overview](https://user-images.githubusercontent.com/36195440/77958169-eba03600-72d4-11ea-80e9-d194e32ce760.png)
 
+# Rendering my pwa server side
+
+I used express to setup a server which handles HTTP requests, when a GET http method is requested on /overview the server responds by fetching data. The data would then be injected into my html files which i converted to EJS files to enable ejs templating. My serverside application runs its scripts before the html is loaded and then sends pure HTML to the computer with the dynamic data allready processed into the file.
+
+```javascript
+app.get('/overview', (req, res) => {
+  const ingredient = req.query.ingredient
+  const drink = req.query.drink
+  const apiKey = "1"
+  fetch(`${url}${apiKey}/filter.php?i=${ingredient}`)
+    .then(async response => {
+      const cocktailData = await response.json()
+      console.log(cocktailData)
+      res.render('overview.ejs', {
+        cocktailData
+      });
+    })
+})
+```
+I included this code snippet which shows my serverside Javascript fetching data from the api based on the users input, as you can see at the rendering step it also "returns" the data to the overview.ejs html file which then creates a list item for each cocktail object in the json file the api responds with. <%= cocktailData.strDrink %> contains the name of the cocktail which will be placed within the p tag.
+
+  <ul class="cocktail-list">
+    <% cocktailData.drinks.forEach(cocktailData => { %>
+      <li>
+        <a href="/cocktails/<%= cocktailData.idDrink %>">
+            <img src="<%= cocktailData.strDrinkThumb %>">
+            <p><%= cocktailData.strDrink %></p>
+        </a>
+      </li>
+      <% }) %>
+  </ul>
+
+
 # My apps audit score before optimalizing the critical render path:
+
+I tried optimalizing the critical render path of my application by looking at the network tab and seeing if there are improvements that can be made on the initial load of my PWA. With the help of service workers i can easily store previouw html/fetch requests and serve them on a repeat view but for now i will focus on progressively rendering the first view. 
 
 ![audit](https://user-images.githubusercontent.com/36195440/78149437-4b622280-7436-11ea-8cc1-45d32863bab4.png)
 
-## and the time it took to render the homepage
+## The time it took to render the homepage
 
 ![before compression](https://user-images.githubusercontent.com/36195440/78149533-66349700-7436-11ea-83e9-236e23bbff6f.png)
 
@@ -59,7 +94,7 @@ At this point i had allready used to tooling (gulp) to minify my css
 
 which can be done realy easily by adding the code [documented here.](https://expressjs.com/en/advanced/best-practice-performance.html#use-gzip-compression)
 
-## rendering the homepage with compressed files / Gzip
+## Rendering the homepage with compressed files / Gzip
 
 ![after compression](https://user-images.githubusercontent.com/36195440/78150252-51a4ce80-7437-11ea-9516-99d1602039df.png)
 
@@ -86,7 +121,8 @@ On a slow 3g connection the first painted pixel only appears 4 seconds after the
 
 ## showing first paint with critical CSS
 
-By injecting the main css needed for styling on my header and instructions section in the head section i would be able to show those elements much quicker, i excluded the background image because that would take "forever" to load. The result:
+To increase the perceived performance of my webpage i would have liked to implement critical CSS, which would inject styling for elements that appear "above the fold" meaning the top of my webpage would render allmost instantly before the rest of the CSS will be parsed by the browser resulting in a page which looks like it rendered instantly.
+By injecting the main css needed for styling on my header and instructions section in the head section i would be able to show those elements much quicker, i excluded the background image because i imagine that would take "forever" to load. The result:
 
 ![critical CSS](https://user-images.githubusercontent.com/36195440/78168259-e7e4ee80-744f-11ea-96bf-04a0933f5212.png)
 
