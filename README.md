@@ -63,7 +63,7 @@ which can be done realy easily by adding the code [documented here.](https://exp
 ![after compression](https://user-images.githubusercontent.com/36195440/78150252-51a4ce80-7437-11ea-9516-99d1602039df.png)
 
 As you can see some files have been compressed down to less than half their size, at the size panel you can see the amount of bytes sent over the network and the original file size which has been grayed out.
-!exclamation! One thing i could look at is decreasing the resource size of my background png by hand because that takes about the same amount of time to parse as my entire css, i wonder if the file sent over the line is smaller than it is after compressing it with Gzip.
+:exclamation: One thing i could look at is decreasing the resource size of my background png by hand because that takes about the same amount of time to parse as my entire css, i wonder if the file sent over the line is smaller than it is after compressing it with Gzip.
 
 ## decreasing image file size by hand to improve loading speed
 
