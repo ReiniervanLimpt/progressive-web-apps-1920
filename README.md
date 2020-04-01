@@ -66,7 +66,7 @@ app.get('/overview', (req, res) => {
 ```
 I included this code snippet which shows my serverside Javascript fetching data from the api based on the users input, as you can see at the rendering step it also "returns" the data to the overview.ejs html file which then creates a list item for each cocktail object in the json file the api responds with. <%= cocktailData.strDrink %> contains the name of the cocktail which will be placed within the p tag.
 
-  <ul class="cocktail-list">
+  `<ul class="cocktail-list">
     <% cocktailData.drinks.forEach(cocktailData => { %>
       <li>
         <a href="/cocktails/<%= cocktailData.idDrink %>">
@@ -75,7 +75,7 @@ I included this code snippet which shows my serverside Javascript fetching data 
         </a>
       </li>
       <% }) %>
-  </ul>
+  </ul>`
 
 
 # My apps audit score before optimalizing the critical render path:
