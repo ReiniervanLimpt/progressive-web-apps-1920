@@ -69,4 +69,8 @@ As you can see some files have been compressed down to less than half their size
 
 I took my background file and compressed it with photoshop, i down it down to 291 kb instead of 655, but the filesize sent over the network remained the same
 
-I then reduced the size of the image itself which was `1535 -1024 px`, i took that down to `1200 x 800 px` this is the result:
+I then reduced the size of the image itself which was `1535 -1024 px`, i took that down to `1200 x 800 px` interestingly enough the filesize sent over the network did not change at all:
+
+![decreased img](https://user-images.githubusercontent.com/36195440/78153374-48b5fc00-743b-11ea-9bba-ab306363a0dd.png)
+
+
