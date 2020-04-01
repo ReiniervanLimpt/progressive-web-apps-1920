@@ -1,4 +1,5 @@
 const express = require('express')
+const compression = require('compression')
 const app = express()
 const port = 3000
 const fetch = require('node-fetch')
@@ -7,6 +8,8 @@ const url = 'https://www.thecocktaildb.com/api/json/v1/'
 
 app.set('view engine', 'ejs')
 app.set('views', 'views')
+
+app.use(compression())
 
 app.use(/.*-[0-9a-f]{10}\..*/, (req, res, next) => {
   res.setHeader('Cache-Control', 'max-age=365000000, immutable');

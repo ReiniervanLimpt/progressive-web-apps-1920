@@ -3,6 +3,73 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: 'Roboto Mono', monospace, Arial, Helvetica, sans-serif;
+      background-image: url("cocktailsbg2.png");
+      background-color: white;
+      background-size: 100vw
+    }
+
+    .instructions {
+      font-size: 2em;
+      text-align: center;
+      margin-left: 25%;
+      margin-top: 10%;
+      width: 50%;
+      color: white;
+      background: rgba(66, 142, 204, .7);
+      border-radius: 20px;
+      padding: 20px
+    }
+
+    .instructions h1 {
+      font-size: 2em;
+      color: #765fa6
+    }
+
+    header {
+      background: #428ecc;
+      color: white;
+      font-size: 2em;
+      padding: 20px;
+      height: 120 px
+    }
+
+    input[type="text"] {
+      border-radius: 10px;
+      border: none
+    }
+
+    input[type="submit"] {
+      margin-left: 15px;
+      background: #765fa6;
+      color: white;
+      border: none;
+      border-radius: 10px
+    }
+
+    form {
+      text-align: center;
+      margin: 0;
+      display: flex;
+      justify-content: center
+    }
+
+    @media (max-width:40em) {
+      input[type="text"] {
+        width: 100%;
+        margin-top: 10px
+      }
+      input[type="submit"] {
+        width: 100%
+      }
+      .instructions {
+        font-size: 1em;
+        margin-left: 20%
+      }
+    }
+  </style>
   <title>Cocktails</title>
   <link rel="stylesheet" type="text/css" href="/styles.css">
   <link rel="manifest" href="/manifest.json">
