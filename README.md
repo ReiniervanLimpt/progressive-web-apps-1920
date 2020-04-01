@@ -87,6 +87,3 @@ On a slow 3g connection the first painted pixel only appears 4 seconds after the
 
 By injecting the main cs needed for styling on my head and instructions section in the head section i can show thoses elements almost instantaneously *(note that i excluded the background image because that would take "forever" to load)*... The result:
 
-![critical CSS](https://user-images.githubusercontent.com/36195440/78159482-e9f48080-7442-11ea-9200-2b1ad9bc33af.png)
-
-First paint in 2ms!!!
