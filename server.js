@@ -5,7 +5,6 @@ const port = 3000
 const fetch = require('node-fetch')
 const url = 'https://www.thecocktaildb.com/api/json/v1/'
 
-
 app.set('view engine', 'ejs')
 app.set('views', 'views')
 
