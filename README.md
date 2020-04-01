@@ -73,4 +73,14 @@ I then reduced the size of the image itself which was `1535 -1024 px`, i took th
 
 ![decreased img](https://user-images.githubusercontent.com/36195440/78153374-48b5fc00-743b-11ea-9bba-ab306363a0dd.png)
 
+## performance after compression
 
+![perf after comp](https://user-images.githubusercontent.com/36195440/78154207-456f4000-743c-11ea-96ff-f15f10708c66.png)
+
+## :exclamation: time to first paint
+
+![needs CCCS](https://user-images.githubusercontent.com/36195440/78154424-8b2c0880-743c-11ea-8733-25d417a73509.png)
+
+On a slow 3g connection the first painted pixel only appears 4 seconds after the first network request...
+
+## showing first paint with critical CSS
