@@ -3,8 +3,8 @@
 body{
   font-family: 'Roboto Mono', monospace, Arial, Helvetica, sans-serif;
   background-image: url("cocktailsbg2.png");
-  background-color: white;
   background-size: 100vw;
+  background-color: white;
 }
 
 .instructions{

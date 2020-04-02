@@ -4,7 +4,8 @@ const app = express()
 const port = 3000
 const fetch = require('node-fetch')
 const url = 'https://www.thecocktaildb.com/api/json/v1/'
-
+const revManifest = require('./static/rev-manifest')
+console.log(revManifest)
 app.set('view engine', 'ejs')
 app.set('views', 'views')
 
@@ -18,7 +19,9 @@ app.use(/.*-[0-9a-f]{10}\..*/, (req, res, next) => {
 app.use(express.static('static'))
 
 app.get('/offline', (req, res) => {
-  res.render('offline.ejs')
+  res.render('offline.ejs', {
+    revManifest
+  })
 })
 
 app.get('/overview', (req, res) => {
@@ -30,7 +33,8 @@ app.get('/overview', (req, res) => {
       const cocktailData = await response.json()
       console.log(cocktailData)
       res.render('overview.ejs', {
-        cocktailData
+        cocktailData,
+        revManifest
       });
     })
 })
@@ -44,7 +48,8 @@ app.get('/cocktails/:id', (req, res) => {
       const cocktailDetail = await response.json()
       console.log(cocktailDetail)
       res.render('detail.ejs', {
-        cocktailDetail
+        cocktailDetail,
+        revManifest
       });
     })
 })
@@ -52,7 +57,9 @@ app.get('/cocktails/:id', (req, res) => {
 app.get('/', open)
 
 function open(req, res) {
-  res.render('index.ejs')
+  res.render('index.ejs', {
+    revManifest
+  })
 }
 
 app.listen(process.env.PORT || 3000)
