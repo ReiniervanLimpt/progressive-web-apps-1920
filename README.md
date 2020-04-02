@@ -17,9 +17,13 @@
 - [ ] allow users to make a profile and save favorite cocktails
 - [ ] critical css implemented as described in [this article from Smashing mag](https://www.smashingmagazine.com/2015/08/understanding-critical-css/)
 
-## install my webapp
+## install cocktail searcher :star:
 
-### make sure you have nodeJS installed
+Install the app for use purposes only via the browser by clicking on the download button in the navigation bar!
+
+## install cocktail searcher for development purposes
+
+## make sure you have nodeJS installed
 
 Navigate to the folder where you wish to clone the app to using your terminal
 
