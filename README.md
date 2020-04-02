@@ -11,6 +11,7 @@
 - [x] make it fancy with css!
 - [x] deploy website to heroku
 
+
 ## wishlist
 
 - [ ] implement error handling
@@ -137,3 +138,61 @@ By injecting the main css needed for styling on my header and instructions secti
 ![critical CSS](https://user-images.githubusercontent.com/36195440/78168259-e7e4ee80-744f-11ea-96bf-04a0933f5212.png)
 
 not that much changed... i followed [this](https://jonassebastianohlsson.com/criticalpathcssgenerator/) tutorial for the easy way out but i quickly found out its not all that easy according to [this article from Smashing mag](https://www.smashingmagazine.com/2015/08/understanding-critical-css/) and [this one from Voorhoede](https://www.voorhoede.nl/en/blog/why-our-website-is-faster-than-yours/#critical-css)
+
+## Service worker
+
+- [x] include service worker
+- [x] Serve an offline page
+- [x] store core assets and html to serve instantly on repeat views
+- [ ] :exclamation: include asset revisions... *sadly i did not get to this part but i am still trying to make it work with declans example*
+
+I included a service worker using Declans example, the service worker server as a proxy between the browser and the server. The service worker stores 2 Core assets in cache storage, my minified CSS and the offline page which is served when the fetch event fails to respond with an html page after a html request (when the user is offline).
+
+```javascript
+      caches.open('html-cache')
+      .then(cache => cache.match(event.request.url))
+      .then(response => response ? response : fetchAndCache(event.request, 'html-cache'))
+      .catch(e => {
+        return caches.open(CORE_CACHE_VERSION)
+          .then(cache => cache.match('/offline'))
+      })
+```
+
+## Service worker in action
+
+![cache core assets](https://user-images.githubusercontent.com/36195440/78239973-aa7b7200-74de-11ea-8c39-53f9bc93edf4.png)
+
+Here you can see the core assets which are stored in cache storage.
+
+```javascript
+const CORE_CACHE_VERSION = '1';
+const CORE_ASSETS = [
+  '/offline',
+  '/styles.css',
+];
+```
+
+these will be fetched upon repeat views using the following code in the service-worker.js file
+
+```javascript
+  if (isCoreGetRequest(event.request)) {
+    console.log('Core get request: ', event.request.url);
+    event.respondWith(
+      caches.open(CORE_CACHE_VERSION)
+      .then(cache => cache.match(event.request.url))
+    )
+```
+
+## caching html requests
+
+![first view](https://user-images.githubusercontent.com/36195440/78240189-f29a9480-74de-11ea-87ad-b1a3476229ed.png)
+
+Upon viewing the page for the first time you can see images are being requested and downloaded, the green bars represent the TTFB which is the time betweer the HTTP request and the first byte being received by the browser.
+
+![repeat view](https://user-images.githubusercontent.com/36195440/78240472-59b84900-74df-11ea-9114-b80de0108749.png)
+
+Upon repeat view you can see the file being served from the cache storage which also completely eliminates the waiting time on the first byte.
+
+![cache html](https://user-images.githubusercontent.com/36195440/78240615-89675100-74df-11ea-94c9-839ba9569023.png)
+
+*The cached html request.*
