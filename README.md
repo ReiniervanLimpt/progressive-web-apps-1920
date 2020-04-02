@@ -23,7 +23,7 @@ Install the app for use purposes only via the browser by clicking on the downloa
 
 ## install cocktail searcher for development purposes
 
-## make sure you have nodeJS installed
+### make sure you have nodeJS installed
 
 Navigate to the folder where you wish to clone the app to using your terminal
 
