@@ -202,3 +202,22 @@ Upon repeat view you can see the file being served from the cache storage which 
 i included hash revisioning with the example of declan from his 24/03 presentation !!!
 
 ![last minute hashing](https://user-images.githubusercontent.com/36195440/78244118-46a87780-74e5-11ea-96a0-cc61249f8476.png)
+
+My PWA does not use client side js so i excluded that from the script so i did not need to filter out the service-worker.js
+
+```javascript
+const gulp = require('gulp');
+const filter = require('gulp-filter');
+const rev = require('gulp-rev');
+const override = require('gulp-rev-css-url');
+
+gulp.src([
+    `./static/**/*.css`,
+  ])
+  .pipe(filter(file => !file.path.endsWith('/service-worker.js')))  //not needed!!
+  .pipe(rev())
+  .pipe(override())
+  .pipe(gulp.dest(`./static/`))
+  .pipe(rev.manifest('rev-manifest.json'))
+  .pipe(gulp.dest(`./static/`));
+```
