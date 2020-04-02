@@ -196,3 +196,9 @@ Upon repeat view you can see the file being served from the cache storage which 
 ![cache html](https://user-images.githubusercontent.com/36195440/78240615-89675100-74df-11ea-94c9-839ba9569023.png)
 
 *The cached html request.*
+
+## hash revisioning
+
+i included hash revisioning with the example of declan from his 24/03 presentation !!!
+
+![last minute hashing](https://user-images.githubusercontent.com/36195440/78244118-46a87780-74e5-11ea-96a0-cc61249f8476.png)
