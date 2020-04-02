@@ -144,7 +144,7 @@ not that much changed... i followed [this](https://jonassebastianohlsson.com/cri
 - [x] include service worker
 - [x] Serve an offline page
 - [x] store core assets and html to serve instantly on repeat views
-- [ ] :exclamation: include asset revisions... *sadly i did not get to this part but i am still trying to make it work with declans example*
+- [x] rev-manifest, hash revision on CSS file
 
 I included a service worker using Declans example, the service worker server as a proxy between the browser and the server. The service worker stores 2 Core assets in cache storage, my minified CSS and the offline page which is served when the fetch event fails to respond with an html page after a html request (when the user is offline).
 
