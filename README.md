@@ -33,6 +33,10 @@ Clone this repository to the folder
 
 `git clone https://github.com/ReiniervanLimpt/progressive-web-apps-1920.git`
 
+Change repository to the master folder
+
+`cd progressive-web-apps-1920`
+
 Run the install, this installs all the required packages included in the package.json file
 
 `npm install`
